@@ -1,5 +1,6 @@
 #include "start/stakeholder.h"
 
 int main() {
-    return start("..\\start\\initData.txt",7);
+    size_t count=7;
+    return start("..\\start\\initData.txt",count);
 }
