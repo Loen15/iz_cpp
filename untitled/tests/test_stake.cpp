@@ -22,10 +22,10 @@ TEST(start, incorrect) {
 
 TEST (info_select,correct){
     stakeholder test={NULL, NULL};
-    std::string str = "Buyer";
+    std::string str = "Sponsor";
     test.role = new char[str.length() + 1];
     strcpy(test.role, str.c_str());
-    EXPECT_EQ(NULL,info_select().role);
+    EXPECT_EQ(test.role,info_select("../start/test.txt").role);
 }
 /*
 
