@@ -8,12 +8,12 @@ packages:
 build:
 	mkdir build && \
 	cd build && \
-	cmake -D TESTS=ON ../project && \
+	cmake -D TESTS=ON ../untitled && \
 	make
 
 analysis: 
 	./linters/run.sh
 
 test:
-	./build/tests/test_calc && \
-	valgrind --tool=memcheck --leak-check=yes ./build/tests/test_calc
+	./build/tests/test_stake && \
+	valgrind --tool=memcheck --leak-check=yes ./build/tests/test_stake
