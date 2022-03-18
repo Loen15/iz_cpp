@@ -8,7 +8,6 @@ TEST(start, correct) {
     std::string correct_str = "../tests/initData.txt";
     char *correct = new char[correct_str.length() + 1];
     strcpy(correct, correct_str.c_str());
-    freopen("test.txt","r",stdin);
     EXPECT_EQ(1, start(correct,7));
     delete [] correct;
 }
@@ -25,7 +24,10 @@ TEST (info_select,correct){
     std::string str = "Sponsor";
     test.role = new char[str.length() + 1];
     strcpy(test.role, str.c_str());
-    EXPECT_EQ(test.role,info_select("../start/test.txt").role);
+    std::string test_file = "../start/test.txt";
+    char *correct = new char[correct_str.length() + 1];
+    strcpy(correct, test_file.c_str());
+    EXPECT_EQ(test.role,info_select(correct).role);
 }
 /*
 
