@@ -22,12 +22,12 @@ function check_log() {
 }
 
 print_header "RUN cppcheck"
-check_log "cppcheck project --enable=all --inconclusive --error-exitcode=1 -I project/include --suppress=missingIncludeSystem" "\(information\)"
+check_log "cppcheck untitled --enable=all --inconclusive --error-exitcode=1 -I untitled/start --suppress=missingIncludeSystem" "\(information\)"
 
 print_header "RUN clang-tidy"
-check_log "clang-tidy project/src/* project/include/* -warnings-as-errors=* -extra-arg=-std=c99 -- -Iproject/include" "Error (?:reading|while processing)"
+check_log "clang-tidy untitled/* untitled/start/* -warnings-as-errors=* -extra-arg=-std=c99 -- -Iuntitled/start" "Error (?:reading|while processing)"
 
 print_header "RUN cpplint"
-check_log "cpplint --extensions=c project/include/* project/src/*" "Can't open for reading"
+check_log "cpplint --extensions=c untitled/start/* untitled/*" "Can't open for reading"
 
 print_header "SUCCESS"
