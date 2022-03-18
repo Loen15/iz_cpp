@@ -120,7 +120,7 @@ stakeholder info_select(char* name)
         switch (point) {
             case 49:
                 printf("Enter a role of stakeholder\n");
-                buf= info_read(buf);
+                buf= info_read(buf,criter_data);
                 for(length=0;buf[length]!='\0';length++){}
                 criter.role= malloc(length + 1);
                 for(int i=0;i<length+1;i++)
@@ -128,7 +128,7 @@ stakeholder info_select(char* name)
                 break;
             case 50:
                 printf("Enter a name of stakeholder\n");
-                buf= info_read(buf);
+                buf= info_read(buf,criter_data);
                 for(length=0;buf[length]!='\0';length++){}
                 criter.name= malloc(length + 1);
                 for(int i=0;i<length+1;i++)
