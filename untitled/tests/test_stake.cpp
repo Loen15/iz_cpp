@@ -4,19 +4,20 @@ extern "C" {
 #include "../start/stakeholder.h"
 }
 
-TEST(start, initialization) {
+TEST(start, correct) {
     std::string correct_str = "start/initData.txt";
-    std::string incorrect_str = "unitData.txt";
     char *correct = new char[correct_str.length() + 1];
     strcpy(correct, correct_str.c_str());
-    char *incorrect = new char[incorrect_str.length() + 1];
-    strcpy(correct, incorrect_str.c_str());
     EXPECT_EQ(1, start(correct,7));
-    EXPECT_EQ(0, start(incorrect,1));
     delete [] correct;
+}
+TEST(start, incorrect) {
+    std::string incorrect_str = "unitData.txt";
+    char *incorrect = new char[incorrect_str.length() + 1];
+    strcpy(incorrect, incorrect_str.c_str());
+    EXPECT_EQ(0, start(incorrect,1));
     delete [] incorrect;
 }
-
 
 /*
 
