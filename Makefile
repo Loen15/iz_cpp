@@ -9,7 +9,7 @@ build:
 	mkdir build && \
 	cd build && \
 	cmake .. &&\
-    cmake --build . &&\
+	cmake --build . &&\
 
 analysis:
 	chmod +x ./linters/run.sh &&\
