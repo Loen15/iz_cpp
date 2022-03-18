@@ -10,7 +10,7 @@ int start(char* name, size_t count)
         return 0;
     print_stakeholders(stakeholders, count);
     stakeholder criter;
-    criter= info_select();
+    criter= info_select("test.txt");
     int buf = find_stakeholders(stakeholders, criter, count);
     free(stakeholders);
     return buf;
@@ -84,9 +84,17 @@ void print_stakeholder(stakeholder curr_stake)
     printf("\tInterest: %c !\n", curr_stake.interest_lvl);
 
 }
-stakeholder info_select()
+stakeholder info_select(char* name)
 {
     stakeholder criter={NULL, NULL};
+    FILE *criter_data;
+    criter_data = fopen(name, "r");
+    if (criter_data == NULL)
+    {
+        printf("Don't open file!\n");
+        return criter;
+    }
+
     char *buf= NULL;
     int point=0;
     int i;
@@ -95,13 +103,13 @@ stakeholder info_select()
     {
         printf("Select required criterion point\n1-role\n2-name\n3-Influence\n4-Interest\n5-Print entered criteria\n6-Continue\n");
         scanf("\n");
-        point=getchar();
+        point=fgetc(criter_data);
         i=0;
         while (point!=49 && point!=50 && point!=51 && point!=52 && point!=53 && point!=54 && i<5)
         {
             printf("Incorrect data %d\n",point);
             scanf("\n");
-            point=getchar();
+            point=fgetc(criter_data);
             i++;
         }
         if (i>=5)
@@ -155,17 +163,17 @@ stakeholder info_select()
 
     return criter;
 }
-char* info_read(char* buf)
+char* info_read(char* buf,FILE *file)
 {
     size_t length=20;
     buf= malloc(sizeof(char)*length);
     int i=0;
     int ch;
     scanf("\n");
-    ch=getchar();
+    ch= fgetc(file);
     buf[i]=(char)ch;
     i++;
-    while ((ch=getchar())!='\n')
+    while ((ch=fgetc(file))!='\n')
     {
         if (ch==' ')
         {

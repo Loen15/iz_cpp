@@ -17,7 +17,7 @@ stakeholder read_stakeholder(FILE *file);
 //client_part
 void print_stakeholders(stakeholder * stakeholders, size_t count);
 void print_stakeholder(stakeholder curr_stake);
-stakeholder info_select();
-char* info_read(char* buf);
+stakeholder info_select(char* name);
+char* info_read(char* buf,FILE* file);
 int find_stakeholders(stakeholder * Stakeholders, stakeholder criter, size_t count);
 #endif //UNTITLED_STAKEHOLDER_H
