@@ -103,7 +103,7 @@ stakeholder info_select(char* name)
 
     char *buf= NULL;
     int point=0;
-    int i;
+    unsigned int i;
     size_t length;
     while (point!=54)
     {
