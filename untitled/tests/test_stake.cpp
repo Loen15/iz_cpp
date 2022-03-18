@@ -8,7 +8,7 @@ TEST(start, correct) {
     std::string correct_str = "../tests/initData.txt";
     char *correct = new char[correct_str.length() + 1];
     strcpy(correct, correct_str.c_str());
-    reopen("test.txt","r",stdin);
+    freopen("test.txt","r",stdin);
     EXPECT_EQ(1, start(correct,7));
     delete [] correct;
 }
