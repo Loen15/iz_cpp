@@ -108,7 +108,7 @@ stakeholder info_select(char* name)
         while (point!=49 && point!=50 && point!=51 && point!=52 && point!=53 && point!=54 && i<5)
         {
             printf("Incorrect data %d\n",point);
-            scanf("\n");
+            //scanf("\n");
             point=fgetc(criter_data);
             i++;
         }
@@ -169,7 +169,7 @@ char* info_read(char* buf,FILE *file)
     buf= malloc(sizeof(char)*length);
     int i=0;
     int ch;
-    scanf("\n");
+    //scanf("\n");
     ch= fgetc(file);
     buf[i]=(char)ch;
     i++;
