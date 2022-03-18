@@ -1,3 +1,3 @@
 check:
-	chmod +x ./linters/run.sh
+	./linters/run.sh
 	
