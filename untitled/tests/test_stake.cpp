@@ -20,14 +20,11 @@ TEST(start, incorrect) {
 }
 
 TEST (info_select,correct){
-    /*stakeholder test={NULL, NULL};
-    std::string str = "Sponsor";
-    test.role = new char[str.length() + 1];
-    strcpy(test.role, str.c_str());*/
     std::string test_file = "../start/test.txt";
     char *correct = new char[test_file.length() + 1];
     strcpy(correct, test_file.c_str());
     char b='H';
+
     EXPECT_EQ(b,info_select(correct).influence_lvl);
 }
 /*
