@@ -5,7 +5,7 @@ extern "C" {
 }
 
 TEST(start, correct) {
-    std::string correct_str = "../tests/initData.txt";
+    std::string correct_str = "iz_cpp/untitled/tests/initData.txt";
     char *correct = new char[correct_str.length() + 1];
     strcpy(correct, correct_str.c_str());
     EXPECT_EQ(1, start(correct,7));
@@ -20,7 +20,7 @@ TEST(start, incorrect) {
 }
 
 TEST (info_select,correct){
-    std::string test_file = "../start/test.txt";
+    std::string test_file = "iz_cpp/untitled/start/test.txt";
     char *correct = new char[test_file.length() + 1];
     strcpy(correct, test_file.c_str());
     char b='H';
