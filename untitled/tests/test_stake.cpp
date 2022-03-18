@@ -20,6 +20,14 @@ TEST(start, incorrect) {
     delete [] incorrect;
 }
 
+TEST (info_select,correct){
+    freopen("test.txt","r",stdin);
+    stakeholder test={NULL, NULL};
+    std::string str = "Buyer";
+    test.Role = new char[str.length() + 1];
+    strcpy(test.Role, str.c_str());
+    EXPECT_EQ(test,info_select());
+}
 /*
 
 //initialization
