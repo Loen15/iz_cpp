@@ -32,7 +32,7 @@ char *read_string(FILE *file) {
     char *str;
     char buff;
     size_t length = 1;
-    str = malloc(length * sizeof(char));
+    str = malloc( sizeof(char));
     str[0] = '\0';
     buff = (char)fgetc(file);
 
