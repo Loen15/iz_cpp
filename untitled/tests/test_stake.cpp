@@ -25,7 +25,7 @@ TEST (info_select,correct){
     test.role = new char[str.length() + 1];
     strcpy(test.role, str.c_str());
     std::string test_file = "../start/test.txt";
-    char *correct = new char[correct_str.length() + 1];
+    char *correct = new char[test_file.length() + 1];
     strcpy(correct, test_file.c_str());
     EXPECT_EQ(test.role,info_select(correct).role);
 }
