@@ -25,7 +25,7 @@ print_header "RUN cppcheck"
 check_log "cppcheck untitled --enable=all --inconclusive --error-exitcode=1 -I untitled/start --suppress=missingIncludeSystem" "\(information\)"
 
 print_header "RUN clang-tidy"
-check_log "clang-tidy untitled/start/*.c untitled/start/*.h -warnings-as-errors=* -extra-arg=-std=c99 -- -Istart" "Error (?:reading|while processing)"
+#check_log "clang-tidy untitled/start/*.c untitled/start/*.h -warnings-as-errors=* -extra-arg=-std=c99 -- -Istart" "Error (?:reading|while processing)"
 
 print_header "RUN cpplint"
 check_log "cpplint --extensions=c untitled/start/*.h untitled/start/*.c untitled/*.c" "Can't open for reading"
