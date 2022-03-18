@@ -8,7 +8,7 @@ packages:
 build:
 	mkdir build && \
 	cd build && \
-	cmake -D ../untitled && \
+	cmake ../untitled && \
 	make
 analysis:
 	chmod +x ./linters/run.sh &&\
