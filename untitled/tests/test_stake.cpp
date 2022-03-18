@@ -24,8 +24,17 @@ TEST (info_select,correct){
     char *correct = new char[test_file.length() + 1];
     strcpy(correct, test_file.c_str());
     char b='H';
-
     EXPECT_EQ(b,info_select(correct).influence_lvl);
+}
+TEST (info_select,incorrect){
+    std::string task_file = "../start/task.txt";
+    char *incor_task = new char[task_file.length() + 1];
+    strcpy(incor_task, task_file.c_str());
+    EXPECT_EQ(NULL,info_select(incor_task).role);
+    std::string test_file = "../start/test_incor.txt";
+    char *incorrect = new char[test_file.length() + 1];
+    strcpy(incorrect, test_file.c_str());
+    EXPECT_EQ(NULL,info_select(incorrect).role);
 }
 /*
 
