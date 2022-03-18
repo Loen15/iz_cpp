@@ -195,7 +195,7 @@ char *info_read(char *buf, FILE *file) {
     buf[i] = '\0';
     return buf;
 }
-int find_stakeholders(stakeholder *Stakeholders, stakeholder criter,
+int find_stakeholders(stakeholder *stakeholders, stakeholder criter,
                       size_t count) {
     int relevant[4][count];
     for (int i = 0; i < count; i++) {
@@ -203,36 +203,36 @@ int find_stakeholders(stakeholder *Stakeholders, stakeholder criter,
             relevant[j][i] = 0;
         if (criter.role != NULL) {
             int j;
-            for (j = 0; Stakeholders[i].role[j] != '\0' &&
-                        Stakeholders[i].role[j] == criter.role[j];
+            for (j = 0; stakeholders[i].role[j] != '\0' &&
+                        stakeholders[i].role[j] == criter.role[j];
                  j++) {
             }
-            if (Stakeholders[i].role[j] == '\0')
+            if (stakeholders[i].role[j] == '\0')
                 relevant[0][i] = 0;
             else
                 relevant[0][i] = 1;
         }
         if (criter.name != NULL) {
             int j;
-            for (j = 0; Stakeholders[i].name[j] != '\0' &&
-                        Stakeholders[i].name[j] == criter.name[j];
+            for (j = 0; stakeholders[i].name[j] != '\0' &&
+                        stakeholders[i].name[j] == criter.name[j];
                  j++) {
             }
-            if (Stakeholders[i].name[j] == '\0')
+            if (stakeholders[i].name[j] == '\0')
                 relevant[1][i] = 0;
             else
                 relevant[1][i] = 1;
         }
         if ((criter.influence_lvl == 'H') || (criter.influence_lvl == 'M') ||
             (criter.influence_lvl == 'L')) {
-            if (Stakeholders[i].influence_lvl == criter.influence_lvl)
+            if (stakeholders[i].influence_lvl == criter.influence_lvl)
                 relevant[2][i] = 0;
             else
                 relevant[2][i] = 1;
         }
         if ((criter.interest_lvl == 'H') || (criter.interest_lvl == 'M') ||
             (criter.interest_lvl == 'L')) {
-            if (Stakeholders[i].interest_lvl == criter.interest_lvl)
+            if (stakeholders[i].interest_lvl == criter.interest_lvl)
                 relevant[3][i] = 0;
             else
                 relevant[3][i] = 1;
@@ -251,7 +251,7 @@ int find_stakeholders(stakeholder *Stakeholders, stakeholder criter,
         if (relev[i] == 1) {
             key = 1;
             printf("stakeholder %d\n", i + 1);
-            print_stakeholder(Stakeholders[i]);
+            print_stakeholder(stakeholders[i]);
         }
     }
     if (key == 0)
