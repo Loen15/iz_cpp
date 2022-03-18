@@ -40,9 +40,15 @@ char* read_string(FILE *file)
     str[0]='\0';
     buff=(char)fgetc(file);
 
+    char* tmp;
     while (buff !='\n')
     {
-        str=realloc(str,sizeof(char)*(++length));
+        tmp= realloc(str,sizeof(char)*(++length));
+        if(!tmp)
+        {
+            return str;
+        }
+        str=tmp;
         str[length-2]=buff;
         str[length-1]='\0';
         buff=(char)fgetc(file);
@@ -174,6 +180,7 @@ char* info_read(char* buf,FILE *file)
     buf= malloc(sizeof(char)*length);
     int i=0;
     int ch;
+    char* tmp;
     //scanf("\n");
     ch= fgetc(file);
     buf[i]=(char)ch;
@@ -192,7 +199,13 @@ char* info_read(char* buf,FILE *file)
         if(i==(length-1))
         {
             length+=20;
-            buf= realloc(buf,length);
+            tmp= realloc(buf,length);
+            if(!tmp)
+            {
+                buf[i]='\0';
+                return buf;
+            }
+            buf=tmp;
         }
     }
     buf[i]='\0';
