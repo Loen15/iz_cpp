@@ -26,7 +26,7 @@ TEST (info_select,correct){
     std::string str = "Buyer";
     test.Role = new char[str.length() + 1];
     strcpy(test.Role, str.c_str());
-    EXPECT_EQ(test,info_select());
+    EXPECT_EQ(test.Role,info_select().Role);
 }
 /*
 
