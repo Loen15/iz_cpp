@@ -138,6 +138,7 @@ stakeholder info_select(char* name)
                 printf("Enter a influence of stakeholder (High, Medium or Low)\n");
                 //do {
                    printf(" in uppercase\n");
+                buf= malloc(sizeof(char));
                    buf[0]=fgetc(criter_data);
                    fgetc(criter_data);
                 //} while ((buf[0]!='H')&&(buf[0]!='M')&&(buf[0]!='L'));
@@ -148,6 +149,7 @@ stakeholder info_select(char* name)
                 printf("Enter a interest of stakeholder (High, Medium or Low)");
 //                do {
                     printf(" in uppercase\n");
+                buf= malloc(sizeof(char));
                     buf[0]=fgetc(criter_data);
                     fgetc(criter_data);
 //                    scanf("%ms",&buf);
