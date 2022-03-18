@@ -104,12 +104,14 @@ stakeholder info_select(char* name)
         printf("Select required criterion point\n1-role\n2-name\n3-Influence\n4-Interest\n5-Print entered criteria\n6-Continue\n");
         scanf("\n");
         point=fgetc(criter_data);
+        fgetc(criter_data);
         i=0;
         while (point!=49 && point!=50 && point!=51 && point!=52 && point!=53 && point!=54 && i<5)
         {
             printf("Incorrect data %d\n",point);
             //scanf("\n");
             point=fgetc(criter_data);
+            fgetc(criter_data);
             i++;
         }
         if (i>=5)
