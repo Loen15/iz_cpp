@@ -61,10 +61,10 @@ stakeholder read_stakeholder(FILE *file)
     stakeholder buf_stake;
     char* str;
     str= read_string(file);
-    buf_stake.role=malloc(sizeof(str));
+    //buf_stake.role=malloc(sizeof(str));
     buf_stake.role=str;
     str= read_string(file);
-    buf_stake.name=malloc(sizeof(str));
+    //buf_stake.name=malloc(sizeof(str));
     buf_stake.name=str;
     free(str);
     buf_stake.influence_lvl=(char)fgetc(file);
@@ -129,7 +129,7 @@ stakeholder info_select(char* name)
                 buf= info_read(buf,criter_data);
                 for(length=0;buf[length]!='\0';length++){}
                 criter.role= malloc(length + 1);
-                for(int i=0;i<length+1;i++)
+                for(i=0;i<length+1;i++)
                     criter.role[i]=buf[i];
                 break;
             case 50:
@@ -137,7 +137,7 @@ stakeholder info_select(char* name)
                 buf= info_read(buf,criter_data);
                 for(length=0;buf[length]!='\0';length++){}
                 criter.name= malloc(length + 1);
-                for(int i=0;i<length+1;i++)
+                for(i=0;i<length+1;i++)
                     criter.name[i]=buf[i];
                 break;
             case 51:
@@ -145,7 +145,7 @@ stakeholder info_select(char* name)
                 //do {
                    printf(" in uppercase\n");
                 buf= malloc(sizeof(char));
-                   buf[0]=fgetc(criter_data);
+                   buf[0]=(char)fgetc(criter_data);
                    fgetc(criter_data);
                 //} while ((buf[0]!='H')&&(buf[0]!='M')&&(buf[0]!='L'));
 
@@ -156,7 +156,7 @@ stakeholder info_select(char* name)
 //                do {
                     printf(" in uppercase\n");
                 buf= malloc(sizeof(char));
-                    buf[0]=fgetc(criter_data);
+                    buf[0]=(char)fgetc(criter_data);
                     fgetc(criter_data);
 //                    scanf("%ms",&buf);
 //                } while ((buf[0]!='H')&&(buf[0]!='M')&&(buf[0]!='L'));
