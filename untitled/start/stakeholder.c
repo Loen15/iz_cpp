@@ -59,7 +59,7 @@ stakeholder read_stakeholder(FILE *file) {
     str = read_string(file);
     // buf_stake.name=malloc(sizeof(str));
     buf_stake.name = str;
-    free(str);
+
     buf_stake.influence_lvl = (char)fgetc(file);
     while (fgetc(file) != '\n') {
     }
@@ -160,8 +160,9 @@ stakeholder info_select(char *name) {
             default:
                 break;
         }
-        free(buf);
+        buf
     }
+    free(buf);
 
     return criter;
 }
