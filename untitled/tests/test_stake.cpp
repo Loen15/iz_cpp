@@ -5,8 +5,6 @@ extern "C" {
 }
 
 TEST(start, initialization) {
-    char* correct ={"start/initData.txt"};
-    char* incorrect={"unitData.txt"};
     std::string correct_str = "start/initData.txt";
     std::string incorrect_str = "unitData.txt";
     char *correct = new char[correct_str.length() + 1];
