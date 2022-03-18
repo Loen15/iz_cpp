@@ -102,14 +102,12 @@ stakeholder info_select(char* name)
     while (point!=54)
     {
         printf("Select required criterion point\n1-role\n2-name\n3-Influence\n4-Interest\n5-Print entered criteria\n6-Continue\n");
-        scanf("\n");
         point=fgetc(criter_data);
         fgetc(criter_data);
         i=0;
         while (point!=49 && point!=50 && point!=51 && point!=52 && point!=53 && point!=54 && i<5)
         {
             printf("Incorrect data %d\n",point);
-            //scanf("\n");
             point=fgetc(criter_data);
             fgetc(criter_data);
             i++;
@@ -138,19 +136,22 @@ stakeholder info_select(char* name)
                 break;
             case 51:
                 printf("Enter a influence of stakeholder (High, Medium or Low)\n");
-                do {
+                //do {
                    printf(" in uppercase\n");
-                   scanf("%ms",&buf);
-                } while ((buf[0]!='H')&&(buf[0]!='M')&&(buf[0]!='L'));
+                   buf[0]=fgetc(criter_data);
+                   fgetc(criter_data);
+                //} while ((buf[0]!='H')&&(buf[0]!='M')&&(buf[0]!='L'));
 
                 criter.influence_lvl=buf[0];
                 break;
             case 52:
                 printf("Enter a interest of stakeholder (High, Medium or Low)");
-                do {
+//                do {
                     printf(" in uppercase\n");
-                    scanf("%ms",&buf);
-                } while ((buf[0]!='H')&&(buf[0]!='M')&&(buf[0]!='L'));
+                    buf[0]=fgetc(criter_data);
+                    fgetc(criter_data);
+//                    scanf("%ms",&buf);
+//                } while ((buf[0]!='H')&&(buf[0]!='M')&&(buf[0]!='L'));
 
                 criter.interest_lvl=buf[0];
                 break;
