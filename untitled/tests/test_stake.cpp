@@ -5,7 +5,7 @@ extern "C" {
 }
 
 TEST(start, correct) {
-    std::string correct_str = "initData.txt";
+    std::string correct_str = "tests/initData.txt";
     char *correct = new char[correct_str.length() + 1];
     strcpy(correct, correct_str.c_str());
     EXPECT_EQ(1, start(correct,7));
