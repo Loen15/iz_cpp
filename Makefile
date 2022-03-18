@@ -8,9 +8,8 @@ packages:
 build:
 	mkdir build && \
 	cd build && \
-	cmake .. &&\
-	cmake --build . &&\
-
+	cmake -D ../untitled && \
+	make
 analysis:
 	chmod +x ./linters/run.sh &&\
 	./linters/run.sh
