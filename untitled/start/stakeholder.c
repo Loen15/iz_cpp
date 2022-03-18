@@ -17,7 +17,7 @@ int start(char *name, size_t count) {
 stakeholder *read_data(char *name, stakeholder *stakeholders, size_t count) {
     FILE *initial_data;
     initial_data = fopen(name, "r");
-    if (initial_data == NULL){
+    if (initial_data == NULL) {
         printf("Don't open file!\n");
         return NULL;
     }
@@ -202,7 +202,6 @@ int find_stakeholders(stakeholder *Stakeholders, stakeholder criter,
         for (int j = 0; j < 4; j++)
             relevant[j][i] = 0;
         if (criter.role != NULL) {
-
             int j;
             for (j = 0; Stakeholders[i].role[j] != '\0' &&
                         Stakeholders[i].role[j] == criter.role[j];
