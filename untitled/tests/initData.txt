@@ -1,0 +1,28 @@
+Project director
+Ivanov Ivan
+High
+Medium
+Contractor
+OOO "Star"
+Mediun
+High
+Sponsor
+Petrov Petr
+Low
+Medium
+Customer
+Jons Jon
+Low
+High
+Sponsor
+Vladimir Vladimirovich
+High
+Low
+Exploitation director
+Sergeev Sergei
+High
+Medium
+Buyer
+OOO "Tiger"
+Medium
+Medium
