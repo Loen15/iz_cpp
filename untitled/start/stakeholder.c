@@ -10,7 +10,7 @@ int start(char* name, size_t count)
         return 0;
     print_stakeholders(stakeholders, count);
     stakeholder criter;
-    criter= info_select("test.txt");
+    criter= info_select("../start/test.txt");
     int buf = find_stakeholders(stakeholders, criter, count);
     free(stakeholders);
     return buf;
