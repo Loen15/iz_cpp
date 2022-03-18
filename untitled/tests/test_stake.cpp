@@ -5,8 +5,10 @@ extern "C" {
 }
 
 TEST(start, initialization) {
-EXPECT_EQ(1, start("start/initData.txt",7));
-EXPECT_EQ(0, start("initData.txt",1));
+    char* correct ={"start/initData.txt"};
+    char* incorrect={"unitData.txt"};
+    EXPECT_EQ(1, start(correct,7));
+    EXPECT_EQ(0, start(incorrect,1));
 }
 
 
