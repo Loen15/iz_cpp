@@ -11,7 +11,8 @@ build:
 	cmake -D TESTS=ON ../untitled && \
 	make
 
-analysis: 
+analysis:
+	chmod +x ./linters/run.sh &&\
 	./linters/run.sh
 
 test:
