@@ -217,6 +217,8 @@ int find_stakeholders(stakeholder * Stakeholders, stakeholder criter, size_t cou
     int relevant[4][count];
     for(int i=0;i<count;i++)
     {
+        for (int j=0;j<4;j++)
+            relevant[j][i]=0;
         if(criter.role != NULL)
         {
 
