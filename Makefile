@@ -8,8 +8,8 @@ packages:
 build:
 	mkdir build && \
 	cd build && \
-	cmake -D TESTS=ON ../untitled && \
-	make
+	cmake .. &&\
+    cmake --build . &&\
 
 analysis:
 	chmod +x ./linters/run.sh &&\
@@ -17,4 +17,7 @@ analysis:
 
 test:
 	./build/tests/test_stake && \
-	valgrind --tool=memcheck --leak-check=yes ./build/tests/test_stake
+	valgrind --tool=memcheck --leak-check=yes ./build/tests/test_stake &&\
+	lcov -t "tests/tests_stake" -o coverage.info -c -d start/ &&\
+    genhtml -o report coverage.info &&\
+    python3 -m http.server 8000
