@@ -24,9 +24,9 @@ TEST (info_select,correct){
     freopen("test.txt","r",stdin);
     stakeholder test={NULL, NULL};
     std::string str = "Buyer";
-    test.Role = new char[str.length() + 1];
-    strcpy(test.Role, str.c_str());
-    EXPECT_EQ(test.Role,info_select().Role);
+    test.role = new char[str.length() + 1];
+    strcpy(test.role, str.c_str());
+    EXPECT_EQ(test.role,info_select().role);
 }
 /*
 
