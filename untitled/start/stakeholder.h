@@ -1,6 +1,6 @@
 
-#ifndef UNTITLED_START_STAKEHOLDER_H
-#define UNTITLED_START_STAKEHOLDER_H
+#ifndef UNTITLED_START_STAKEHOLDER_H_
+#define UNTITLED_START_STAKEHOLDER_H_
 #include <stdio.h>
 typedef struct stakeholder stakeholder;
 struct  stakeholder{
