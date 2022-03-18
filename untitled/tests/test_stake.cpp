@@ -21,7 +21,6 @@ TEST(start, incorrect) {
 }
 
 TEST (info_select,correct){
-    freopen("test.txt","r",stdin);
     stakeholder test={NULL, NULL};
     std::string str = "Buyer";
     test.role = new char[str.length() + 1];

@@ -113,7 +113,6 @@ stakeholder info_select()
             case 49:
                 printf("Enter a role of stakeholder\n");
                 buf= info_read(buf);
-                printf("you vveli %s",buf);
                 for(length=0;buf[length]!='\0';length++){}
                 criter.role= malloc(length + 1);
                 for(int i=0;i<length+1;i++)
