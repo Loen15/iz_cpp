@@ -16,7 +16,4 @@ analysis:
 
 test:
 	./build/tests/test_stake && \
-	valgrind --tool=memcheck --leak-check=yes ./build/tests/test_stake &&\
-	lcov -t "tests/tests_stake" -o coverage.info -c -d start/ &&\
-    genhtml -o report coverage.info &&\
-    python3 -m http.server 8000
+	valgrind --tool=memcheck --leak-check=yes ./build/tests/test_stake

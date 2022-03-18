@@ -167,7 +167,7 @@ stakeholder info_select(char *name) {
 }
 char *info_read(char *buf, FILE *file) {
     size_t length = 20;
-    buf = malloc(sizeof(char) * length);
+    buf = malloc(sizeof(char) * (size_t)20);
     int i = 0;
     int ch;
     char *tmp;
