@@ -160,7 +160,6 @@ stakeholder info_select(char *name) {
             default:
                 break;
         }
-        buf
     }
     free(buf);
 
