@@ -27,7 +27,7 @@ TEST (info_select,correct){
     std::string test_file = "../start/test.txt";
     char *correct = new char[test_file.length() + 1];
     strcpy(correct, test_file.c_str());
-    char b="H";
+    char b='H';
     EXPECT_EQ(b,info_select(correct).influence_lvl);
 }
 /*
