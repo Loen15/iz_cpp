@@ -91,7 +91,7 @@ stakeholder info_select(char* name)
     criter_data = fopen(name, "r");
     if (criter_data == NULL)
     {
-        printf("Don't open file!\n");
+        printf("Don't open file info!\n");
         return criter;
     }
 
