@@ -8,10 +8,11 @@ int start(char* name, size_t count)
     stakeholders= read_data(name, stakeholders, count);
     if(stakeholders == NULL)
         return 0;
-    print_stakeholders(stakeholders, 7);
+    print_stakeholders(stakeholders, count);
     stakeholder criter;
     criter= info_select();
-    return find_stakeholders(stakeholders, criter, 7);
+    int buf = find_stakeholders(stakeholders, criter, count);
+    free(stakeholders);
     }
 stakeholder* read_data(char* name, stakeholder * stakeholders, size_t count)
 {
@@ -58,6 +59,7 @@ stakeholder read_stakeholder(FILE *file)
     str= read_string(file);
     buf_stake.name=malloc(sizeof(str));
     buf_stake.name=str;
+    free(str);
     buf_stake.influence_lvl=(char)fgetc(file);
     while (fgetc(file) !='\n'){}
     buf_stake.interest_lvl=(char)fgetc(file);
