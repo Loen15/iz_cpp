@@ -89,19 +89,26 @@ stakeholder info_select()
     stakeholder criter={NULL, NULL};
     char *buf= NULL;
     int point=0;
+    int i;
     size_t length;
     while (point!=54)
     {
         printf("Select required criterion point\n1-role\n2-name\n3-Influence\n4-Interest\n5-Print entered criteria\n6-Continue\n");
         scanf("\n");
         point=getchar();
-        while (point!=49 && point!=50 && point!=51 && point!=52 && point!=53 && point!=54)
+        i=0;
+        while (point!=49 && point!=50 && point!=51 && point!=52 && point!=53 && point!=54 && i<5)
         {
             printf("Incorrect data %d\n",point);
             scanf("\n");
             point=getchar();
+            i++;
         }
-
+        if (i>=5)
+        {
+            printf("restart program\n");
+            return criter;
+        }
         switch (point) {
             case 49:
                 printf("Enter a role of stakeholder\n");
