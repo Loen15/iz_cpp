@@ -13,6 +13,7 @@ int start(char* name, size_t count)
     criter= info_select();
     int buf = find_stakeholders(stakeholders, criter, count);
     free(stakeholders);
+    return buf;
     }
 stakeholder* read_data(char* name, stakeholder * stakeholders, size_t count)
 {
