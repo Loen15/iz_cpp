@@ -17,3 +17,6 @@ analysis:
 test:
 	./build/tests/test_stake && \
 	valgrind --tool=memcheck --leak-check=yes ./build/tests/test_stake
+
+report:
+	lcov -t "build/tests/test_stake" -o coverage.info -c -d build/start
