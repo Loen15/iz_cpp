@@ -29,6 +29,6 @@ print_header "RUN clang-tidy"
 check_log "clang-tidy untitled/start/*.c untitled/start/*.h -extra-arg=-std=c99 -- -Istart" "Error (?:reading|while processing)"
 
 print_header "RUN cpplint"
-check_log "cpplint --extensions=c untitled/start/*.h untitled/start/*.c untitled/*.c" "Can't open for reading"
+check_log "cpplint --extensions=c --filter=-runtime/arrays untitled/start/*.h untitled/start/*.c untitled/*.c" "Can't open for reading"
 
 print_header "SUCCESS"
